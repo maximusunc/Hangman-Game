@@ -3,6 +3,7 @@ var wins = 0;
 var guessesRemaining = 10;
 var lettersGuessed = [];
 // Pick word to be guessed
+var currentWord = [accordion, guitar, harp, alphorn, saxophone, anvil, piano, bagpipes, banjo, baritone, bass, clarinet, drums, bassoon, bells, bongo, cello, chimes, clarinet, cornet, cowbell, cymbals, didgeridoo, organ, euphonium, fiddle, flugelhorn, flute, horn, gong, mandolin, oboe, piccolo, recorder, sousaphone, tambourine, triangle, trombone, trumpet, tuba, ukulele, violin, xylophone]
 // Show blanks
 // 
 // Receive input from player
