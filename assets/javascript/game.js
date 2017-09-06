@@ -19,9 +19,15 @@ document.getElementById('blanks').innerHTML = blanks.join("");
 // Receive input from player
 document.onkeyup = function(event) {
 	var letter = event.key;
+	console.log(letter);
 	lettersGuessed.push(letter);
-	console.log(lettersGuessed);
-	if (letter ==  )
+	var guess = currentWord.indexOf(letter);
+	if (currentWord.includes(letter)) {
+		blanks[guess] = letter.toUpperCase();
+		console.log(blanks);
+	}
+	document.getElementById('blanks').innerHTML = blanks.join("");
+
 };
 
 // Check to see if letter is in word
