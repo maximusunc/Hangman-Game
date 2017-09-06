@@ -1,0 +1,12 @@
+h1, h2, p {
+	text-align: center;
+	line-height: 2;
+}
+h1 {
+	font-weight: bolder;
+	font-size: 40px;
+}
+h2 {
+	font-weight: bolder;
+	font-size: 30px;
+}
