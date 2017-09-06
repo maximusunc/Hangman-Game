@@ -14,14 +14,19 @@ console.log(currentWord);
 for (var i = 0; i < currentWord.length; i ++) {
 	blanks.push("_ ");
 }
-console.log(blanks);
-console.log(blanks);
 document.getElementById('blanks').innerHTML = blanks.join("");
 // 
 // Receive input from player
+document.onkeyup = function(event) {
+	var letter = event.key;
+	lettersGuessed.push(letter);
+	console.log(lettersGuessed);
+	if (letter ==  )
+};
+
 // Check to see if letter is in word
+// If letter has already been chosen, don't do anything
 // If letter is in word, replace blank with the letter
 // If letter isn't in word, set number of guesses to -1
-// If letter has already been chosen, don't do anything
 // If number of guesses == 0, end the game and reset
 // If player solves the word, say congrats and reset
