@@ -2,14 +2,21 @@
 var wins = 0;
 var guessesRemaining = 10;
 var lettersGuessed = [];
+var blanks = [];
 document.getElementById('wins').innerHTML = wins;
+document.getElementById('guessesRemaining').innerHTML = guessesRemaining;
+document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
 // Pick word to be guessed
 var wordList = ['accordion', 'guitar', 'harp', 'alphorn', 'saxophone', 'anvil', 'piano', 'bagpipes', 'banjo', 'baritone', 'bass', 'clarinet', 'drums', 'bassoon', 'bells', 'bongo', 'cello', 'chimes', 'clarinet', 'cornet', 'cowbell', 'cymbals', 'didgeridoo', 'organ', 'euphonium', 'fiddle', 'flugelhorn', 'flute', 'horn', 'gong', 'mandolin', 'oboe', 'piccolo', 'recorder', 'sousaphone', 'tambourine', 'triangle', 'trombone', 'trumpet', 'tuba', 'ukulele', 'violin', 'xylophone'];
 var currentWord = wordList[Math.floor(Math.random() * (wordList.length - 1))];
 console.log(currentWord);
-document.getElementById('currentWord').innerHTML = currentWord;
 // Show blanks
-
+for (var i = 0; i < currentWord.length; i ++) {
+	blanks.push("_ ");
+}
+console.log(blanks);
+console.log(blanks);
+document.getElementById('blanks').innerHTML = blanks.join("");
 // 
 // Receive input from player
 // Check to see if letter is in word
