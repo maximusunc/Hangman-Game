@@ -1,5 +1,7 @@
-// Set all variables to 0
 var wins = 0;
+
+function hangman() {
+// Set all variables to 0
 var guessesRemaining = 10;
 var lettersGuessed = [];
 var blanks = [];
@@ -18,21 +20,41 @@ document.getElementById('blanks').innerHTML = blanks.join("");
 // 
 // Receive input from player
 document.onkeyup = function(event) {
-	var letter = event.key;
-	console.log(letter);
-	lettersGuessed.push(letter);
-	var guess = currentWord.indexOf(letter);
-	if (currentWord.includes(letter)) {
-		blanks[guess] = letter.toUpperCase();
-		console.log(blanks);
-	}
-	document.getElementById('blanks').innerHTML = blanks.join("");
-
-};
-
-// Check to see if letter is in word
+	if (event.key.length == 1) {
+	var letter = event.key
+	} else {
+		return
+	};
 // If letter has already been chosen, don't do anything
+	if (lettersGuessed.includes(letter)) {
+		return
+	}
+// Check to see if letter is in word
+	else if (currentWord.includes(letter)) {
+		console.log(letter);
+		for (var i = 0; i < currentWord.length; i++) {
+			if (currentWord[i] === letter) {
 // If letter is in word, replace blank with the letter
+				blanks[i] = letter.toUpperCase();
+				document.getElementById('blanks').innerHTML = blanks.join(" ");
+			};
+		};
+	} 
 // If letter isn't in word, set number of guesses to -1
+	else {
+		guessesRemaining -= 1;
+		document.getElementById('guessesRemaining').innerHTML = guessesRemaining;
+	};
+	lettersGuessed.push(letter);
+	document.getElementById('lettersGuessed').innerHTML = lettersGuessed.join(" ");
 // If number of guesses == 0, end the game and reset
+	if (guessesRemaining == 0) {
+		hangman();
+	}
 // If player solves the word, say congrats and reset
+	if (!blanks.includes("_ ")) {
+		wins += 1;
+		hangman();
+	}
+};
+};
