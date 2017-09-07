@@ -26,12 +26,11 @@ document.onkeyup = function(event) {
 		return
 	};
 // If letter has already been chosen, don't do anything
-	if (lettersGuessed.includes(letter)) {
+	if (lettersGuessed.includes(letter.toUpperCase())) {
 		return
 	}
 // Check to see if letter is in word
 	else if (currentWord.includes(letter)) {
-		console.log(letter);
 		for (var i = 0; i < currentWord.length; i++) {
 			if (currentWord[i] === letter) {
 // If letter is in word, replace blank with the letter
@@ -45,7 +44,7 @@ document.onkeyup = function(event) {
 		guessesRemaining -= 1;
 		document.getElementById('guessesRemaining').innerHTML = guessesRemaining;
 	};
-	lettersGuessed.push(letter);
+	lettersGuessed.push(letter.toUpperCase());
 	document.getElementById('lettersGuessed').innerHTML = lettersGuessed.join(" ");
 // If number of guesses == 0, end the game and reset
 	if (guessesRemaining == 0) {
