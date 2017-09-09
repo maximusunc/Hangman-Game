@@ -12,6 +12,7 @@ document.getElementById('lettersGuessed').innerHTML = lettersGuessed;
 var wordList = ['accordion', 'guitar', 'harp', 'alphorn', 'saxophone', 'anvil', 'piano', 'bagpipes', 'banjo', 'baritone', 'bass', 'clarinet', 'drums', 'bassoon', 'bells', 'bongo', 'cello', 'chimes', 'clarinet', 'cornet', 'cowbell', 'cymbals', 'didgeridoo', 'organ', 'euphonium', 'fiddle', 'flugelhorn', 'flute', 'horn', 'gong', 'mandolin', 'oboe', 'piccolo', 'recorder', 'sousaphone', 'tambourine', 'triangle', 'trombone', 'trumpet', 'tuba', 'ukulele', 'violin', 'xylophone'];
 var currentWord = wordList[Math.floor(Math.random() * (wordList.length - 1))];
 console.log(currentWord);
+var lastWord = currentWord;
 // Show blanks
 for (var i = 0; i < currentWord.length; i ++) {
 	blanks.push("_ ");
@@ -48,11 +49,13 @@ document.onkeyup = function(event) {
 	document.getElementById('lettersGuessed').innerHTML = lettersGuessed.join(" ");
 // If number of guesses == 0, end the game and reset
 	if (guessesRemaining == 0) {
+		document.getElementById('lastWord').innerHTML = lastWord;
 		hangman();
 	}
 // If player solves the word, say congrats and reset
 	if (!blanks.includes("_ ")) {
 		wins += 1;
+		document.getElementById('lastWord').innerHTML = lastWord;
 		hangman();
 	}
 };

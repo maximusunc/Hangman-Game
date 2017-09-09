@@ -1,15 +1,16 @@
 body {
 	font-family: 'Indie Flower', cursive;
-	color: blue;
-	/*background-image: url("../images/music-background.png");*/
+	color: white;
+	background-image: url("../images/instruments.jpg");
 	background-repeat: no-repeat;	
 	background-position: center;
 	background-size: 100% 150%;
 }
 h1, h2, p {
 	text-align: center;
-	line-height: 2.5;
+	line-height: 2;
 	font-weight: bold;
+	opacity: 1;
 }
 h1 {
 	font-weight: bolder;
@@ -21,4 +22,10 @@ h2 {
 }
 p {
 	font-size: 20px;
+}
+#container {
+	background-color: rgba(63, 127, 191, 0.7);
+	width: 550px;
+	margin: 40px auto;
+	padding: 20px;
 }
