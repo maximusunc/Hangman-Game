@@ -19,9 +19,12 @@ for (var i = 0; i < currentWord.length; i ++) {
 }
 document.getElementById('blanks').innerHTML = blanks.join("");
 // 
+
+var alphabet = /^[A-Za-z]+$/;
+
 // Receive input from player
 document.onkeyup = function(event) {
-	if (event.key.length == 1) {
+	if (event.key.length == 1 && event.key.match(alphabet)) {
 	var letter = event.key
 	} else {
 		return
